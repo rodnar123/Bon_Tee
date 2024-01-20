@@ -1,0 +1,106 @@
+@import "../../app.scss";
+.hero {
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  background: linear-gradient(180deg, #111132, #0c0c1d);
+  position: relative;
+  perspective: 10000px;
+
+  .wrapper {
+    max-width: 1366px;
+    height: 100%;
+    margin: auto;
+    z-index: -1;
+    background-color: #0e1a22;
+    transform: rotateX(25deg) rotateY(0deg);
+    border-radius: 20px;
+
+    @include mobile {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .textContainer {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+
+      @include mobile {
+        height: 50%;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 30px;
+        color: rebeccapurple;
+        letter-spacing: 10px;
+      }
+      h1 {
+        font-size: 50px;
+        @include mobile {
+          font-size: 36px;
+        }
+      }
+      .buttons {
+        z-index: 1;
+        button {
+          padding: 20px;
+          border: 3px solid orange;
+          border-radius: 20px;
+          background-color: transparent;
+          color: white;
+          font-weight: bold;
+          margin-right: 20px;
+          cursor: pointer;
+        }
+      }
+
+      img {
+        border: solid orange;
+        width: 50px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    }
+    .imageContainer {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      @include mobile {
+        height: 50%;
+        width: 100%;
+        top: unset;
+        bottom: 0;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .slidingTextContainer {
+    position: absolute;
+    font-size: 50vh;
+    bottom: -120px;
+    white-space: nowrap;
+    color: #ffffff09;
+    width: 50%;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+  }
+}
